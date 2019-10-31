@@ -8,11 +8,15 @@ class SingleArticle extends Component {
   }
 
   async componentDidMount() {
-    debugger;
-    let response = await getSpecificArticle(this.props.key)
-    this.setState({
-      article: response
-    })
+    let response = await getSpecificArticle(2)
+    if (response.status === 200) {
+      this.setState({
+        article: response.data
+      })
+    } else {
+      debugger;
+      this.props.renderErrorMessage(response)
+    }
   }
 
   render() {
