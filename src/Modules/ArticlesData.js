@@ -25,23 +25,26 @@ const submitArticle = async (title, content, image) => {
     {
       headers: getCurrentCredentials()
     })
+    debugger
     return response
 
   } catch(error) {
+    debugger;
     return error.response.data.error_message
   }
 }
 
 const getSpecificArticle = async (articleId) => {
-  debugger
   try {
     let response = await axios.get(apiUrl + `articles/${articleId}`,
     {
       headers: getCurrentCredentials()
     })
+    debugger
     return response
   } catch(error) {
-    return error.response.data.errors
+    debugger
+    return error.response.data.error_message
   }
 }
 

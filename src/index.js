@@ -16,7 +16,7 @@ verifyCredentials(store)
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <StripeProvider apiKey={process.env.REACT_APP_STRIPE_API_KEY}>
+      <StripeProvider apiKey="">
         <Elements>
           <App />
         </Elements>
